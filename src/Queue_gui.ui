@@ -1,0 +1,595 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>873</width>
+    <height>357</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Praca inzynierska -- symulator</string>
+  </property>
+  <widget class="QPushButton" name="startButton" >
+   <property name="geometry" >
+    <rect>
+     <x>250</x>
+     <y>10</y>
+     <width>113</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ToEnd" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>380</x>
+     <y>10</y>
+     <width>113</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Do końca</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>20</y>
+     <width>92</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Czas symulacji</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="MaxSimTime" >
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>10</y>
+     <width>106</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="minimum" >
+    <number>1</number>
+   </property>
+   <property name="maximum" >
+    <number>999999999</number>
+   </property>
+   <property name="singleStep" >
+    <number>60</number>
+   </property>
+   <property name="value" >
+    <number>500000</number>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="EventTabs" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>551</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="currentIndex" >
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="tab" >
+    <attribute name="title" >
+     <string>Serwery</string>
+    </attribute>
+    <widget class="QLabel" name="label" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>94</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Ilość serwerów</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="ServersNum" >
+     <property name="geometry" >
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>106</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="minimum" >
+      <number>1</number>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+     <property name="value" >
+      <number>50</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2" >
+    <attribute name="title" >
+     <string>Kolejka</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget_3" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>401</width>
+       <height>158</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_3" >
+      <property name="fieldGrowthPolicy" >
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>Rozmiar kolejki</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QSpinBox" name="QueueSize" >
+        <property name="maximum" >
+         <number>999999999</number>
+        </property>
+        <property name="singleStep" >
+         <number>10</number>
+        </property>
+        <property name="value" >
+         <number>200</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_18" >
+        <property name="text" >
+         <string>Maksymalny czas czekania</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QSpinBox" name="WaitLen" >
+        <property name="maximum" >
+         <number>999999999</number>
+        </property>
+        <property name="singleStep" >
+         <number>10</number>
+        </property>
+        <property name="value" >
+         <number>90</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label_21" >
+        <property name="text" >
+         <string>Dyscyplina kolejki</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QComboBox" name="Discipline" >
+        <item>
+         <property name="text" >
+          <string>FIFO</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>LIFO</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>RANDOM</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3" >
+    <attribute name="title" >
+     <string>Użytkownicy</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget_2" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>331</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_2" >
+      <property name="fieldGrowthPolicy" >
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>Ilość użytkowników</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QSpinBox" name="UserNum" >
+        <property name="maximum" >
+         <number>999999999</number>
+        </property>
+        <property name="value" >
+         <number>200</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QComboBox" name="EventLength" >
+        <item>
+         <property name="text" >
+          <string>Const</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Wykładniczy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Normalny</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Poissona</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>Erlanga</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_13" >
+        <property name="text" >
+         <string>Czas trwania</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QSpinBox" name="TrafficLen" >
+        <property name="maximum" >
+         <number>999999999</number>
+        </property>
+        <property name="singleStep" >
+         <number>10</number>
+        </property>
+        <property name="value" >
+         <number>90</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label_11" >
+        <property name="text" >
+         <string>Średni czas trwania</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="label_10" >
+        <property name="text" >
+         <string>Natężenie ruchu</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QDoubleSpinBox" name="TrafficDen" >
+        <property name="maximum" >
+         <double>100000.000000000000000</double>
+        </property>
+        <property name="value" >
+         <double>37.899999999999999</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4" >
+    <attribute name="title" >
+     <string>Statystyki obiektów</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>0</y>
+       <width>331</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout" >
+      <property name="fieldGrowthPolicy" >
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="1" >
+       <widget class="QLCDNumber" name="LCDServed" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_8" >
+        <property name="text" >
+         <string>Zdarzenia odrzucone</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QLCDNumber" name="LCDRejected" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label_9" >
+        <property name="text" >
+         <string>Zdarzenia razem</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QLCDNumber" name="LCDAll" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label_7" >
+        <property name="text" >
+         <string>Zdarzenia obsłużone</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="label_14" >
+        <property name="text" >
+         <string>Poziom dostępu</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QLCDNumber" name="LCDGOS" >
+        <property name="smallDecimalPoint" >
+         <bool>false</bool>
+        </property>
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+        <property name="value" stdset="0" >
+         <double>0.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" >
+       <widget class="QLabel" name="label_15" >
+        <property name="text" >
+         <string>Natężenie ruchu</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" >
+       <widget class="QLCDNumber" name="LCDA" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" >
+       <widget class="QLabel" name="label_16" >
+        <property name="text" >
+         <string>Odchyłka natężenia ruchu</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" >
+       <widget class="QLCDNumber" name="LCDErr" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" >
+       <widget class="QLabel" name="label_19" >
+        <property name="text" >
+         <string>Zajętość kolejki</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1" >
+       <widget class="QLCDNumber" name="LCDQueUsage" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" >
+       <widget class="QLabel" name="label_12" >
+        <property name="text" >
+         <string>Zdarzenia zakolejkowane</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1" >
+       <widget class="QLCDNumber" name="LCDReallyQueued" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0" >
+       <widget class="QLabel" name="label_20" >
+        <property name="text" >
+         <string>Średni czas czekania</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1" >
+       <widget class="QLCDNumber" name="LCDAvgWait" >
+        <property name="numDigits" >
+         <number>10</number>
+        </property>
+        <property name="segmentStyle" >
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="QuiT" >
+   <property name="geometry" >
+    <rect>
+     <x>510</x>
+     <y>10</y>
+     <width>113</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Zakończ</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="ProgressSim" >
+   <property name="geometry" >
+    <rect>
+     <x>580</x>
+     <y>70</y>
+     <width>271</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value" >
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="ProgressGOS" >
+   <property name="geometry" >
+    <rect>
+     <x>580</x>
+     <y>130</y>
+     <width>271</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value" >
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>580</x>
+     <y>50</y>
+     <width>104</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Postęp symulacji</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>580</x>
+     <y>110</y>
+     <width>141</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Zdarzeń obsłużonych</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="LCDClock" >
+   <property name="geometry" >
+    <rect>
+     <x>780</x>
+     <y>160</y>
+     <width>64</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LCDCLockLabel" >
+   <property name="geometry" >
+    <rect>
+     <x>590</x>
+     <y>160</y>
+     <width>171</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Czas symulacji</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
